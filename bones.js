@@ -11,26 +11,9 @@
       this.updateBackgroundColor();
     };
 
-    var colorForLevel = function(lvl, selected) {
-      if (selected) {
-        switch (lvl) {
-          case 5: return '#633';
-          case 4: return '#733';
-          case 3: return '#833';
-          case 2: return '#933';
-          case 1: return '#b33';
-          case 0: return '#f33';
-        }
-      } else {
-        switch (lvl) {
-          case 5: return '#666';
-          case 4: return '#777';
-          case 3: return '#888';
-          case 2: return '#999';
-          case 1: return '#bbb';
-          case 0: return '#fff';
-        }
-      }
+    var colors = {
+      'selected': ['#f33', '#b33', '#933', '#833', '#733', '#633'],
+      'unselected': ['#fff', '#bbb', '#999', '#888', '#777', '#666']
     };
 
     Cell.prototype.createEl = function() {
@@ -51,7 +34,7 @@
     };
 
     Cell.prototype.updateBackgroundColor = function() {
-      this.el.style.backgroundColor = colorForLevel(this.level, this.selected);
+      this.el.style.backgroundColor = colors[this.selected ? 'selected' : 'unselected'][this.level];
     };
 
 
