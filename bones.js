@@ -84,7 +84,7 @@
       st.height = '220';
 
       var j;
-      for (j = 0; j < 3; j++) {
+      for (j = 0; j < 11; j++) {
         var c = new Cell(j + '.wav');
         colDiv.appendChild(c.el);
         col.push(c);
@@ -100,7 +100,7 @@
       var j;
       for (j = i - 5; j <= i; j++) {
         var k;
-        for (k = 0; k < 3; k++) {
+        for (k = 0; k < 11; k++) {
           cols[j < 0 ? j + 20 : j][k].pulse(i - j);
         }
       }
